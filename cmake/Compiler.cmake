@@ -1,0 +1,15 @@
+include(${CMAKE_SOURCE_DIR}/cmake/Logging.cmake)
+
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+log_info("CMAKE_CXX_COMPILER_ID: ${CMAKE_CXX_COMPILER_ID}")
+if(CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-rtti")
+    set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3")
+    set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g")
+else()
+    log_fatal("Unsupported compiler")
+endif()
