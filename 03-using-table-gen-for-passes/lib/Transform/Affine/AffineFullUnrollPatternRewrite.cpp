@@ -3,13 +3,13 @@
 #include <mlir/IR/PatternMatch.h>
 #include <mlir/Transforms/GreedyPatternRewriteDriver.h>
 
-#include "03-using-table-gen-for-passes/Transform/Affine/AffineFullUnrollPatternRewrite.hpp"
+#include "mlir-tutorial/Transform/Affine/AffineFullUnrollPatternRewrite.hpp"
 
 namespace mlir::tutorial
 {
 
 #define GEN_PASS_DEF_AFFINEFULLUNROLLPATTERNREWRITE
-#include "03-using-table-gen-for-passes/Transform/Affine/Passes.h.inc"
+#include "mlir-tutorial/Transform/Affine/Passes.h.inc"
 
 using ::mlir::affine::AffineForOp;
 using ::mlir::affine::loopUnrollFull;

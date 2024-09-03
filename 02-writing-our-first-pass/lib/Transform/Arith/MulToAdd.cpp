@@ -4,7 +4,7 @@
 #include "mlir/Transforms/GreedyPatternRewriteDriver.h"
 #include <cstdint>
 
-#include "lib/Transform/Arith/MulToAdd.hpp"
+#include "mlir-tutorial/Transform/Arith/MulToAdd.hpp"
 
 namespace mlir::tutorial
 {

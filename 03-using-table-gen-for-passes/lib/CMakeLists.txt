@@ -1,6 +1,5 @@
 set(TARGET_NAME "03-Passes")
-
-log_info("Additional Header Directories: ${PROJECT_SOURCE_DIR}/include/03-using-table-gen-for-passes")
+log_info("Target: ${TARGET_NAME} Library")
 
 add_mlir_dialect_library(
     # Library Name:
@@ -8,12 +7,11 @@ add_mlir_dialect_library(
     # Source Files:
     ${CMAKE_CURRENT_SOURCE_DIR}/Transform/Affine/AffineFullUnroll.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/Transform/Affine/AffineFullUnrollPatternRewrite.cpp
-
-    ADDITIONAL_HEADER_DIRS
-    ${PROJECT_SOURCE_DIR}/include/03-using-table-gen-for-passes
+    ${CMAKE_CURRENT_SOURCE_DIR}/Transform/Arith/MulToAdd.cpp
 
     DEPENDS
-    03-Passes-IncGen
+    03-Transform-Affine-Passes-IncGen
+    03-Transform-Arith-Passes-IncGen
 
     LINK_LIBS PUBLIC
     MLIRIR
@@ -25,8 +23,7 @@ add_mlir_dialect_library(
 
 )
 # Add alias with ${GLOABL_NAMESPACE}
-add_library(${GLOBAL_NAMESPACE}::${TARGET_NAME} ALIAS ${TARGET_NAME}
-)
+add_library(${GLOBAL_NAMESPACE}::${TARGET_NAME} ALIAS ${TARGET_NAME})
 
 set_target_properties(${TARGET_NAME} PROPERTIES 
     # Output Directory:

@@ -1,1 +1,11 @@
-add_subdirectory(03-using-table-gen-for-passes)
+set(TARGET_NAME "03-Transform-Affine-Passes-IncGen")
+set(LLVM_TARGET_DEFINITIONS mlir-tutorial/Transform/Affine/Passes.td)
+mlir_tablegen(mlir-tutorial/Transform/Affine/Passes.h.inc -gen-pass-decls -name=Affine)
+mlir_tablegen(mlir-tutorial/Transform/Affine/AffinePasses.md -gen-pass-doc)
+add_public_tablegen_target(${TARGET_NAME})
+
+set(TARGET_NAME "03-Transform-Arith-Passes-IncGen")
+set(LLVM_TARGET_DEFINITIONS mlir-tutorial/Transform/Arith/Passes.td)
+mlir_tablegen(mlir-tutorial/Transform/Arith/Passes.hpp.inc -gen-pass-decls -name=Affine)
+mlir_tablegen(mlir-tutorial/Transform/Arith/AffinePasses.md -gen-pass-doc)
+add_public_tablegen_target(${TARGET_NAME})

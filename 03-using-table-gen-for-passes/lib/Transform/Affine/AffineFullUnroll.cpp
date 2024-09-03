@@ -2,12 +2,12 @@
 #include <mlir/Dialect/Affine/LoopUtils.h>
 #include <mlir/IR/PatternMatch.h>
 
-#include "03-using-table-gen-for-passes/Transform/Affine/AffineFullUnroll.hpp"
+#include "mlir-tutorial/Transform/Affine/AffineFullUnroll.hpp"
 
 namespace mlir::tutorial
 {
 #define GEN_PASS_DEF_AFFINEFULLUNROLL
-#include "03-using-table-gen-for-passes/Transform/Affine/Passes.h.inc"
+#include "mlir-tutorial/Transform/Affine/Passes.h.inc"
 
 using ::mlir::affine::AffineForOp;
 using ::mlir::affine::loopUnrollFull;

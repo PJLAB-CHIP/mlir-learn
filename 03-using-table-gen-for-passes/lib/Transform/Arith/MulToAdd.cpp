@@ -4,7 +4,7 @@
 #include "mlir/Transforms/GreedyPatternRewriteDriver.h"
 #include <cstdint>
 
-#include "03-using-table-gen-for-passes/Transform/Arith/MulToAdd.hpp"
+#include "mlir-tutorial/Transform/Arith/MulToAdd.hpp"
 
 namespace mlir::tutorial
 {
@@ -123,12 +123,21 @@ struct PeelFromMul : public OpRewritePattern<MulIOp>
     }
 };
 
-void MulToAddPass::runOnOperation()
+#define GEN_PASS_DEF_MULTOADD
+#include "mlir-tutorial/Transform/Arith/Passes.hpp.inc"
+
+struct MulToAdd : impl::MulToAddBase<MulToAdd>
 {
-    mlir::RewritePatternSet patterns(&getContext());
-    patterns.add<PowerOfTwoExpand>(&getContext());
-    patterns.add<PeelFromMul>(&getContext());
-    (void) applyPatternsAndFoldGreedily(getOperation(), std::move(patterns));
-}
+    using MulToAddBase::MulToAddBase;
+
+    void runOnOperation() final
+    {
+        ::mlir::RewritePatternSet patterns(&getContext());
+        patterns.add<PowerOfTwoExpand>(&getContext());
+        patterns.add<PeelFromMul>(&getContext());
+        (void) applyPatternsAndFoldGreedily(getOperation(),
+                                            std::move(patterns));
+    }
+};
 
 }  // namespace mlir::tutorial

@@ -1,23 +1,22 @@
 set(TARGET_NAME "02-AffineFullUnroll")
+log_info("Target: ${TARGET_NAME} Library")
 
-add_library(
-    ${TARGET_NAME} STATIC 
+add_mlir_dialect_library(
+    # Library Name:
+    ${TARGET_NAME}
+    # Source Files:
     ${CMAKE_CURRENT_SOURCE_DIR}/Transform/Affine/AffineFullUnroll.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/Transform/Arith/MulToAdd.cpp
+    # Link Libraries:
+    LINK_LIBS PUBLIC
+    MLIRIR MLIRPass MLIRTransforms MLIRAffineDialect
+    MLIRFuncDialect MLIRInferTypeOpInterface
 )
 add_library(${GLOBAL_NAMESPACE}::${TARGET_NAME} ALIAS ${TARGET_NAME})
 
-target_include_directories(${TARGET_NAME} PUBLIC ${PROJECT_SOURCE_DIR})
-
-# Link against MLIR and LLVM
-target_link_libraries(
-    ${TARGET_NAME} PUBLIC 
-    MLIRPass
-    MLIRTransforms
-    MLIRAffineDialect
-    MLIRFuncDialect
+set_target_properties(${TARGET_NAME} PROPERTIES 
+    # Output Directory:
+    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_OUTPUT_DIR}/bin
+    LIBRARY_OUTPUT_DIRECTORY ${CMAKE_OUTPUT_DIR}/lib
+    ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_OUTPUT_DIR}/lib
 )
-
-# Include directories
-target_include_directories(${TARGET_NAME} PUBLIC ${LLVM_INCLUDE_DIRS})
-target_include_directories(${TARGET_NAME} PUBLIC ${MLIR_INCLUDE_DIRS})

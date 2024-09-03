@@ -3,8 +3,8 @@
 #include <mlir/Pass/PassRegistry.h>
 #include <mlir/Tools/mlir-opt/MlirOptMain.h>
 
-#include <lib/Transform/Affine/AffineFullUnroll.hpp>
-#include <lib/Transform/Arith/MulToAdd.hpp>
+#include <mlir-tutorial/Transform/Affine/AffineFullUnroll.hpp>
+#include <mlir-tutorial/Transform/Arith/MulToAdd.hpp>
 
 int main(int argc, char** argv)
 {

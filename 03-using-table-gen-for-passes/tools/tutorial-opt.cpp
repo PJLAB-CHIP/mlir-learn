@@ -3,7 +3,7 @@
 #include <mlir/Pass/PassRegistry.h>
 #include <mlir/Tools/mlir-opt/MlirOptMain.h>
 
-#include "03-using-table-gen-for-passes/Transform/Affine/Passes.h"
+#include "mlir-tutorial/Transform/Affine/Passes.h"
 
 
 int main(int argc, char** argv)
