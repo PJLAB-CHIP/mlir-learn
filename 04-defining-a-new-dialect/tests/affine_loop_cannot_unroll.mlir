@@ -1,4 +1,4 @@
-// RUN: 03-tutorial-opt %s --affine-full-unroll-rewrite > %t
+// RUN: 04-tutorial-opt %s --affine-full-unroll-rewrite > %t
 // RUN: FileCheck %s < %t
 
 func.func @test_dynamic_loop(%buffer: memref<?xi32>, %size: i32) -> (i32) {

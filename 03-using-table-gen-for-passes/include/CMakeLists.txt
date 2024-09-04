@@ -6,6 +6,6 @@ add_public_tablegen_target(${TARGET_NAME})
 
 set(TARGET_NAME "03-Transform-Arith-Passes-IncGen")
 set(LLVM_TARGET_DEFINITIONS mlir-tutorial/Transform/Arith/Passes.td)
-mlir_tablegen(mlir-tutorial/Transform/Arith/Passes.hpp.inc -gen-pass-decls -name=Affine)
-mlir_tablegen(mlir-tutorial/Transform/Arith/AffinePasses.md -gen-pass-doc)
+mlir_tablegen(mlir-tutorial/Transform/Arith/Passes.hpp.inc -gen-pass-decls -name=Arith)
+mlir_tablegen(mlir-tutorial/Transform/Arith/ArithPasses.md -gen-pass-doc)
 add_public_tablegen_target(${TARGET_NAME})

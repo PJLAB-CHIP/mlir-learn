@@ -8,7 +8,7 @@ config.suffixes = [".mlir"]
 
 
 current_path = os.getcwd()
-tool_path = "build/03-using-table-gen-for-passes/tools"
+tool_path = "build/04-defining-a-new-dialect/tools"
 
 config.environment["PATH"] = (
     osp.join(current_path, tool_path) + ":" + os.environ["PATH"]

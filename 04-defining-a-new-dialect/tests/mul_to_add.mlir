@@ -1,4 +1,4 @@
-// RUN: 03-tutorial-opt %s --mul-to-add > %t
+// RUN: 04-tutorial-opt %s --mul-to-add > %t
 // RUN: FileCheck %s < %t
 
 func.func @just_power_of_two(%arg: i32) -> i32 {

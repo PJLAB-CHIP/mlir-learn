@@ -1,4 +1,4 @@
-set(TARGET_NAME "03-tutorial-opt")
+set(TARGET_NAME "04-tutorial-opt")
 
 get_property(dialect_libs GLOBAL PROPERTY MLIR_DIALECT_LIBS)
 get_property(conversion_libs GLOBAL PROPERTY MLIR_CONVERSION_LIBS)
@@ -7,13 +7,12 @@ set(LIBS
     ${conversion_libs}
     MLIRArithDialect
     MLIROptLib
-    ${GLOBAL_NAMESPACE}::03-Passes
+    ${GLOBAL_NAMESPACE}::04-tutorial-lib
     )
 
 add_llvm_executable(${TARGET_NAME} tutorial-opt.cpp)
 
 set_target_properties(${TARGET_NAME} PROPERTIES 
-    # Output Directory:
     RUNTIME_OUTPUT_DIRECTORY ${CMAKE_OUTPUT_DIR}/tools
 )
 
