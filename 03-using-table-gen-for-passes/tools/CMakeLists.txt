@@ -1,19 +1,28 @@
-set(TARGET_NAME "03-tutorial-opt")
+####################################################################################################
+# @file    "03-using-table-gen-for-passes/tools/CMakeLists.txt"
+# --------------------------------------------------------------------------------------------------
+# @brief   This CMake file is used to define the ${PROJECT_TARGET_PREFIX}-tutorial-opt executable.
+# --------------------------------------------------------------------------------------------------
+# @note    ${PROJECT_TARGET_PREFIX} and ${CMAKE_OUTPUT_DIR} is set in "03-using-table-gen-for-
+#          passes/CMakeLists.txt".
+####################################################################################################
+
+set(TARGET_NAME ${PROJECT_TARGET_PREFIX}-tutorial-opt)
 
 get_property(dialect_libs GLOBAL PROPERTY MLIR_DIALECT_LIBS)
 get_property(conversion_libs GLOBAL PROPERTY MLIR_CONVERSION_LIBS)
-set(LIBS
+set(
+    LIBS
     ${dialect_libs}
     ${conversion_libs}
     MLIRArithDialect
     MLIROptLib
-    ${GLOBAL_NAMESPACE}::03-Passes
-    )
+    ${PROJECT_TARGET_PREFIX}-tutorial-lib
+)
 
 add_llvm_executable(${TARGET_NAME} tutorial-opt.cpp)
 
 set_target_properties(${TARGET_NAME} PROPERTIES 
-    # Output Directory:
     RUNTIME_OUTPUT_DIRECTORY ${CMAKE_OUTPUT_DIR}/tools
 )
 

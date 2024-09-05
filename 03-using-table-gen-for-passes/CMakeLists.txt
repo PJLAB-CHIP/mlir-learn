@@ -1,9 +1,15 @@
+####################################################################################################
+# @file    "03-using-table-gen-for-passes/CMakeLists.txt"
+# --------------------------------------------------------------------------------------------------
+# @brief   This CMake file is used to define the 03-using-table-gen-for-passes project.
+####################################################################################################
+
 project(03-using-table-gen-for-passes)
 
+# This project-wise prefix is intended to be added to all target names.
+set(PROJECT_TARGET_PREFIX "03")
+# Set the output directory for the project.
 set(CMAKE_OUTPUT_DIR ${CMAKE_BINARY_DIR}/${PROJECT_NAME})
-
-include_directories(${PROJECT_SOURCE_DIR}/include)
-include_directories(${CMAKE_OUTPUT_DIR}/include)
 
 add_subdirectory("include")
 add_subdirectory("lib")

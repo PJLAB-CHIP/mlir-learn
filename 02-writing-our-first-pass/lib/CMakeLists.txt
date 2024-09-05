@@ -4,15 +4,20 @@ log_info("Target: ${TARGET_NAME} Library")
 add_mlir_dialect_library(
     # Library Name:
     ${TARGET_NAME}
+
     # Source Files:
     ${CMAKE_CURRENT_SOURCE_DIR}/Transform/Affine/AffineFullUnroll.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/Transform/Arith/MulToAdd.cpp
+
     # Link Libraries:
     LINK_LIBS PUBLIC
-    MLIRIR MLIRPass MLIRTransforms MLIRAffineDialect
-    MLIRFuncDialect MLIRInferTypeOpInterface
+    MLIRIR 
+    MLIRPass 
+    MLIRTransforms 
+    MLIRAffineDialect
+    MLIRFuncDialect 
+    MLIRInferTypeOpInterface
 )
-add_library(${GLOBAL_NAMESPACE}::${TARGET_NAME} ALIAS ${TARGET_NAME})
 
 set_target_properties(${TARGET_NAME} PROPERTIES 
     # Output Directory:

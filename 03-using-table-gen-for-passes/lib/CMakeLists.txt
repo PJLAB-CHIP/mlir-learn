@@ -1,5 +1,21 @@
-set(TARGET_NAME "03-Passes")
+####################################################################################################
+# @file    "04-defining-a-new-dialect/lib/CMakeLists.txt"
+# --------------------------------------------------------------------------------------------------
+# @brief   This CMake file is used to define the ${PROJECT_TARGET_PREFIX}-tutorial-lib library 
+#          target.
+# --------------------------------------------------------------------------------------------------
+# @note    ${PROJECT_TARGET_PREFIX} is set in the parent CMakeLists.txt file.
+####################################################################################################
+
+set(TARGET_NAME ${PROJECT_TARGET_PREFIX}-tutorial-lib)
 log_info("Target: ${TARGET_NAME} Library")
+
+# Get the tablegen targets from the global property;
+# Check "../include/CMakeLists.txt" for its definition.
+get_property(
+    TABLEGEN_TARGETS GLOBAL PROPERTY 
+    ${PROJECT_TARGET_PREFIX}-TABLEGEN-TARGETS
+)
 
 add_mlir_dialect_library(
     # Library Name:
@@ -10,8 +26,7 @@ add_mlir_dialect_library(
     ${CMAKE_CURRENT_SOURCE_DIR}/Transform/Arith/MulToAdd.cpp
 
     DEPENDS
-    03-Transform-Affine-Passes-IncGen
-    03-Transform-Arith-Passes-IncGen
+    ${TABLEGEN_TARGETS}
 
     LINK_LIBS PUBLIC
     MLIRIR
@@ -20,10 +35,14 @@ add_mlir_dialect_library(
     MLIRAffineDialect
     MLIRFuncDialect
     MLIRInferTypeOpInterface
-
 )
-# Add alias with ${GLOABL_NAMESPACE}
-add_library(${GLOBAL_NAMESPACE}::${TARGET_NAME} ALIAS ${TARGET_NAME})
+
+target_include_directories(
+    ${TARGET_NAME}
+    PUBLIC
+    ${PROJECT_SOURCE_DIR}/include
+    ${CMAKE_OUTPUT_DIR}/include
+)
 
 set_target_properties(${TARGET_NAME} PROPERTIES 
     # Output Directory:

@@ -1,8 +1,8 @@
 #ifndef MLIR_TUTORIAL_DIALECT_POLY_POLYTYPES_TD_
 #define MLIR_TUTORIAL_DIALECT_POLY_POLYTYPES_TD_
 
-include "mlir-tutorial/Dialect/Poly/PolyDialect.td"
 include "mlir/IR/AttrTypeBase.td"
+include "mlir-tutorial/Dialect/Poly/PolyDialect.td"
 
 // A base class for all types in this dialect
 class Poly_Type<string name, string typeMnemonic> : TypeDef<Poly_Dialect, name> {

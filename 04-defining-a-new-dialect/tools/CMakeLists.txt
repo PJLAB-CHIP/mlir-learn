@@ -1,14 +1,24 @@
-set(TARGET_NAME "04-tutorial-opt")
+####################################################################################################
+# @file    "04-defining-a-new-dialect/tools/CMakeLists.txt"
+# --------------------------------------------------------------------------------------------------
+# @brief   This CMake file is used to define the ${PROJECT_TARGET_PREFIX}-tutorial-opt executable.
+# --------------------------------------------------------------------------------------------------
+# @note    ${PROJECT_TARGET_PREFIX} and ${CMAKE_OUTPUT_DIR} is set in "04-defining-a-new-dialect/
+#          CMakeLists.txt".
+####################################################################################################
+
+set(TARGET_NAME ${PROJECT_TARGET_PREFIX}-tutorial-opt)
 
 get_property(dialect_libs GLOBAL PROPERTY MLIR_DIALECT_LIBS)
 get_property(conversion_libs GLOBAL PROPERTY MLIR_CONVERSION_LIBS)
-set(LIBS
+set(
+    LIBS
     ${dialect_libs}
     ${conversion_libs}
     MLIRArithDialect
     MLIROptLib
-    ${GLOBAL_NAMESPACE}::04-tutorial-lib
-    )
+    ${PROJECT_TARGET_PREFIX}-tutorial-lib
+)
 
 add_llvm_executable(${TARGET_NAME} tutorial-opt.cpp)
 
