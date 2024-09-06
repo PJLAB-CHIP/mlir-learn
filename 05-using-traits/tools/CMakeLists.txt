@@ -1,5 +1,5 @@
 ####################################################################################################
-# @file    "04-defining-a-new-dialect/tools/CMakeLists.txt"
+# @file    "05-using-traits/tools/CMakeLists.txt"
 # --------------------------------------------------------------------------------------------------
 # @brief   This CMake file is used to define the ${PROJECT_TARGET_PREFIX}-tutorial-opt executable.
 # --------------------------------------------------------------------------------------------------

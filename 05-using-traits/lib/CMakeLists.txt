@@ -1,5 +1,5 @@
 ####################################################################################################
-# @file    "03-using-table-gen-for-passes/lib/CMakeLists.txt"
+# @file    "05-using-traits/lib/CMakeLists.txt"
 # --------------------------------------------------------------------------------------------------
 # @brief   This CMake file is used to define the ${PROJECT_TARGET_PREFIX}-tutorial-lib library 
 #          target.
@@ -29,6 +29,7 @@ add_mlir_library(
     ${CMAKE_CURRENT_SOURCE_DIR}/Transform/Affine/AffineFullUnroll.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/Transform/Affine/AffineFullUnrollPatternRewrite.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/Transform/Arith/MulToAdd.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/Dialect/Poly/PolyDialect.cpp
 
     DEPENDS
     ${TABLEGEN_TARGETS}
@@ -55,4 +56,3 @@ set_target_properties(${TARGET_NAME} PROPERTIES
     LIBRARY_OUTPUT_DIRECTORY ${CMAKE_OUTPUT_DIR}/lib
     ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_OUTPUT_DIR}/lib
 )
-

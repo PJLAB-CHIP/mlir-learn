@@ -1,5 +1,5 @@
 ####################################################################################################
-# @file    "04-defining-a-new-dialect/include/CMakeLists.txt"
+# @file    "05-using-traits/include/CMakeLists.txt"
 # --------------------------------------------------------------------------------------------------
 # @brief   This CMake file is used to define tabelegen targets and generate injectable headers and
 #          source files for the Poly dialect and its operations.
@@ -52,3 +52,4 @@ set_property(
     GLOBAL PROPERTY ${PROJECT_TARGET_PREFIX}-TABLEGEN-TARGETS
     ${ALL_TABLEGEN_TARGETS}
 )
+

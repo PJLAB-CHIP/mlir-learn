@@ -1,7 +1,19 @@
-set(TARGET_NAME "02-AffineFullUnroll")
-log_info("Target: ${TARGET_NAME} Library")
+####################################################################################################
+# @file    "02-writing-our-first-pass/lib/CMakeLists.txt"
+# --------------------------------------------------------------------------------------------------
+# @brief   This CMake file is used to define the ${PROJECT_TARGET_PREFIX}-tutorial-lib library 
+#          target.
+####################################################################################################
 
-add_mlir_dialect_library(
+set(TARGET_NAME "02-tutorial-lib")
+log_info("|- Target <lib>: ${TARGET_NAME}")
+
+# If you want to append your library to ${MLIR_DIALECT_LIBS},
+# Use:
+# > add_mlir_dialect_library(...)
+# Otherwise, use:
+# > add_mlir_library(...)
+add_mlir_library(
     # Library Name:
     ${TARGET_NAME}
 
@@ -17,6 +29,12 @@ add_mlir_dialect_library(
     MLIRAffineDialect
     MLIRFuncDialect 
     MLIRInferTypeOpInterface
+)
+
+target_include_directories(
+    ${TARGET_NAME}
+    PUBLIC
+    ${PROJECT_SOURCE_DIR}/include
 )
 
 set_target_properties(${TARGET_NAME} PROPERTIES 

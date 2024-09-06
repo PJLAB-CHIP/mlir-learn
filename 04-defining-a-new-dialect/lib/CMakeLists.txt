@@ -8,7 +8,7 @@
 ####################################################################################################
 
 set(TARGET_NAME ${PROJECT_TARGET_PREFIX}-tutorial-lib)
-log_info("Target: ${TARGET_NAME} Library")
+log_info("|- Target <lib>: ${TARGET_NAME}")
 
 # Get the tablegen targets from the global property;
 # Check "../include/CMakeLists.txt" for its definition.
@@ -17,7 +17,12 @@ get_property(
     ${PROJECT_TARGET_PREFIX}-TABLEGEN-TARGETS
 )
 
-add_mlir_dialect_library(
+# If you want to append your library to ${MLIR_DIALECT_LIBS},
+# Use:
+# > add_mlir_dialect_library(...)
+# Otherwise, use:
+# > add_mlir_library(...)
+add_mlir_library(
     # Library Name:
     ${TARGET_NAME}
     # Source Files:

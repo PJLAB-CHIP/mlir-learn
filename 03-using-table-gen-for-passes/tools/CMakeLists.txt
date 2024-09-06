@@ -8,6 +8,7 @@
 ####################################################################################################
 
 set(TARGET_NAME ${PROJECT_TARGET_PREFIX}-tutorial-opt)
+log_info("|- Target <exe>: ${TARGET_NAME}")
 
 get_property(dialect_libs GLOBAL PROPERTY MLIR_DIALECT_LIBS)
 get_property(conversion_libs GLOBAL PROPERTY MLIR_CONVERSION_LIBS)

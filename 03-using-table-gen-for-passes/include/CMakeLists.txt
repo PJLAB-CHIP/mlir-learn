@@ -19,9 +19,15 @@ mlir_tablegen(mlir-tutorial/Transform/Arith/Passes.hpp.inc -gen-pass-decls -name
 mlir_tablegen(mlir-tutorial/Transform/Arith/ArithPasses.md -gen-pass-doc)
 add_public_tablegen_target(${TARGET_NAME})
 
+set(
+    ALL_TABLEGEN_TARGETS
+    ${PROJECT_TARGET_PREFIX}-Transform-Affine-Passes-IncGen
+    ${PROJECT_TARGET_PREFIX}-Transform-Arith-Passes-IncGen
+)
+log_info("|- Target <tablegen>: ${ALL_TABLEGEN_TARGETS}")
+
 # Add the generated files to a global property, so they can be used in the library
 set_property(
     GLOBAL PROPERTY ${PROJECT_TARGET_PREFIX}-TABLEGEN-TARGETS
-    ${PROJECT_TARGET_PREFIX}-Transform-Affine-Passes-IncGen
-    ${PROJECT_TARGET_PREFIX}-Transform-Arith-Passes-IncGen
+    ${ALL_TABLEGEN_TARGETS}
 )

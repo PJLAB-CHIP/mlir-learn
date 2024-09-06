@@ -1,7 +1,22 @@
+# This is used for colorizing the output
+# For example, to colorize the output with purple, use the following:
+# > log_info("${Esc}[0;35mHello, World!${Esc}[m")
+string(ASCII 27 Esc)
+
 set(LOG_PREFIX "MLIR-LEARN")
 
+set(LOG_RED "${Esc}[0;31m")
+set(LOG_GREEN "${Esc}[0;32m")
+set(LOG_YELLOW "${Esc}[0;33m")
+set(LOG_BLUE "${Esc}[0;34m")
+set(LOG_PURPLE "${Esc}[0;35m")
+set(LOG_CYAN "${Esc}[0;36m")
+set(LOG_WHITE "${Esc}[0;37m")
+set(LOG_RESET "${Esc}[m")
+
+
 function(log_info msg)
-    message(STATUS "[${LOG_PREFIX}|INFO] >>> ${msg}")
+    message(STATUS "[${LOG_PREFIX}|${LOG_GREEN}INFO${LOG_RESET}] >>> ${msg}")
 endfunction(log_info msg)
 
 function(log_warning msg)

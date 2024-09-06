@@ -32,4 +32,5 @@ add_subdirectory("standalone")
 add_subdirectory("02-writing-our-first-pass")
 add_subdirectory("03-using-table-gen-for-passes")
 add_subdirectory("04-defining-a-new-dialect")
+add_subdirectory("05-using-traits")
 
