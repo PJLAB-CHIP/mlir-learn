@@ -14,7 +14,6 @@ set(LOG_CYAN "${Esc}[0;36m")
 set(LOG_WHITE "${Esc}[0;37m")
 set(LOG_RESET "${Esc}[m")
 
-
 function(log_info msg)
     message(STATUS "[${LOG_PREFIX}|${LOG_GREEN}INFO${LOG_RESET}] >>> ${msg}")
 endfunction(log_info msg)
