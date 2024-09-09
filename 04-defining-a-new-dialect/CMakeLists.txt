@@ -5,13 +5,13 @@
 ####################################################################################################
 
 project(04-defining-a-new-dialect)
-log_info("${LOG_PURPLE}Project: ${PROJECT_NAME}${LOG_RESET}")
+mlir_learn_log_info("${MLIR_LEARN_LOG_PURPLE}Project: ${PROJECT_NAME}${MLIR_LEARN_LOG_RESET}")
 
 # This project-wise prefix is intended to be added to all target names.
 set(PROJECT_TARGET_PREFIX "04")
 # Set the output directory for the project.
 set(CMAKE_OUTPUT_DIR ${CMAKE_BINARY_DIR}/${PROJECT_NAME})
-log_info("|- Output Directory: ${CMAKE_OUTPUT_DIR}")
+mlir_learn_log_info("|- Output Directory: ${CMAKE_OUTPUT_DIR}")
 
 include_directories(
     ${PROJECT_SOURCE_DIR}/include

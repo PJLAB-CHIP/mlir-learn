@@ -8,8 +8,8 @@ include(${CMAKE_SOURCE_DIR}/cmake/Compiler.cmake)
 find_package(MLIR REQUIRED CONFIG)
 find_package(LLVM REQUIRED CONFIG)
 
-log_info("Using MLIRConfig.cmake in: ${MLIR_DIR}")
-log_info("Using LLVMConfig.cmake in: ${LLVM_DIR}")
+mlir_learn_log_info("Using MLIRConfig.cmake in: ${MLIR_DIR}")
+mlir_learn_log_info("Using LLVMConfig.cmake in: ${LLVM_DIR}")
 
 set(LLVM_RUNTIME_OUTPUT_INTDIR ${CMAKE_BINARY_DIR}/bin)
 set(LLVM_LIBRARY_OUTPUT_INTDIR ${CMAKE_BINARY_DIR}/lib)

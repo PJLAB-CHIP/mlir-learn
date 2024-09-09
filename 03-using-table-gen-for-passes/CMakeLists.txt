@@ -5,7 +5,7 @@
 ####################################################################################################
 
 project(03-using-table-gen-for-passes)
-log_info("${LOG_PURPLE}Project: ${PROJECT_NAME}${LOG_RESET}")
+mlir_learn_log_info("${MLIR_LEARN_LOG_PURPLE}Project: ${PROJECT_NAME}${MLIR_LEARN_LOG_RESET}")
 
 # This project-wise prefix is intended to be added to all target names.
 set(PROJECT_TARGET_PREFIX "03")

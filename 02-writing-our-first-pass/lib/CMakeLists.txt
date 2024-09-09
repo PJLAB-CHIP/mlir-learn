@@ -6,7 +6,7 @@
 ####################################################################################################
 
 set(TARGET_NAME "02-tutorial-lib")
-log_info("|- Target <lib>: ${TARGET_NAME}")
+mlir_learn_log_info("|- Target <lib>: ${TARGET_NAME}")
 
 # If you want to append your library to ${MLIR_DIALECT_LIBS},
 # Use:

@@ -24,7 +24,7 @@ set(
     ${PROJECT_TARGET_PREFIX}-Transform-Affine-Passes-IncGen
     ${PROJECT_TARGET_PREFIX}-Transform-Arith-Passes-IncGen
 )
-log_info("|- Target <tablegen>: ${ALL_TABLEGEN_TARGETS}")
+mlir_learn_log_info("|- Target <tablegen>: ${ALL_TABLEGEN_TARGETS}")
 
 # Add the generated files to a global property, so they can be used in the library
 set_property(

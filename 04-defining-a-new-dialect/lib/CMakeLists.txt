@@ -8,7 +8,7 @@
 ####################################################################################################
 
 set(TARGET_NAME ${PROJECT_TARGET_PREFIX}-tutorial-lib)
-log_info("|- Target <lib>: ${TARGET_NAME}")
+mlir_learn_log_info("|- Target <lib>: ${TARGET_NAME}")
 
 # Get the tablegen targets from the global property;
 # Check "../include/CMakeLists.txt" for its definition.
