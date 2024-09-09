@@ -30,6 +30,7 @@ add_mlir_library(
     ${CMAKE_CURRENT_SOURCE_DIR}/Transform/Affine/AffineFullUnrollPatternRewrite.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/Transform/Arith/MulToAdd.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/Dialect/Poly/PolyDialect.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/Dialect/Poly/PolyOps.cpp
 
     DEPENDS
     ${TABLEGEN_TARGETS}
