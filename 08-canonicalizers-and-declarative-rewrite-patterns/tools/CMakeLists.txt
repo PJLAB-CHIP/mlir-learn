@@ -1,10 +1,10 @@
 ####################################################################################################
-# @file    "07-varifiers/tools/CMakeLists.txt"
+# @file    "08-canonicalizers-and-declarative-rewrite-patterns/tools/CMakeLists.txt"
 # --------------------------------------------------------------------------------------------------
 # @brief   This CMake file is used to define the ${PROJECT_TARGET_PREFIX}-tutorial-opt executable.
 # --------------------------------------------------------------------------------------------------
-# @note    ${PROJECT_TARGET_PREFIX} and ${CMAKE_OUTPUT_DIR} is set in "06-folders-and-constant-
-#          propagation/CMakeLists.txt".
+# @note    ${PROJECT_TARGET_PREFIX} and ${CMAKE_OUTPUT_DIR} is set in "08-canonicalizers-and-
+#          declarative-rewrite-patterns".
 ####################################################################################################
 
 set(TARGET_NAME ${PROJECT_TARGET_PREFIX}-tutorial-opt)

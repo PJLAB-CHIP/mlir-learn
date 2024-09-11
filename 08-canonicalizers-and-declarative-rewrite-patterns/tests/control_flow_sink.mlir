@@ -1,4 +1,4 @@
-// RUN: 07-tutorial-opt -control-flow-sink %s > %t
+// RUN: 08-tutorial-opt -control-flow-sink %s > %t
 // RUN: FileCheck %s < %t
 
 // Test that operations can be sunk.

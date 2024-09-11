@@ -35,4 +35,5 @@ add_subdirectory("04-defining-a-new-dialect")
 add_subdirectory("05-using-traits")
 add_subdirectory("06-folders-and-constant-propagation")
 add_subdirectory("07-varifiers")
+add_subdirectory("08-canonicalizers-and-declarative-rewrite-patterns")
 

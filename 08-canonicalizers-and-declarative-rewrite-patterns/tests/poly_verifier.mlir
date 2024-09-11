@@ -1,4 +1,4 @@
-// RUN: 07-tutorial-opt %s 2>%t; FileCheck %s < %t
+// RUN: 08-tutorial-opt %s 2>%t; FileCheck %s < %t
 
 func.func @test_invalid_evalop(%arg0: !poly.poly<10>, %cst: i64) -> i64 {
   // This is a little brittle, since it matches both the error message

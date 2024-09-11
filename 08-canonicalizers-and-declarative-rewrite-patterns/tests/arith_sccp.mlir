@@ -1,4 +1,5 @@
-// RUN: 07-tutorial-opt %s --sccp > %t
+// RUN: 08-tutorial-opt --canonicalize %s > %t
+// RUN: FileCheck %s < %t
 
 // Note: 
 //   --sccp does sparse conditional constant propagation, which is a forward dataflow analysis that propagates constant values through the program, but not deleting the dead code.

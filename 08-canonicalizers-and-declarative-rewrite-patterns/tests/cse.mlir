@@ -1,4 +1,4 @@
-// RUN: 07-tutorial-opt -cse %s > %t
+// RUN: 08-tutorial-opt -cse %s > %t
 // RUN: FileCheck %s < %t
 
 // CHECK-LABEL: @test_simple_cse

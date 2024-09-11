@@ -40,8 +40,8 @@ OpFoldResult MulOp::fold(MulOp::FoldAdaptor adaptor)
     // which could be optimized if one expects people to start compiling
     // programs with large, static polynomials in them.
 
-    auto lhs = dyn_cast<DenseIntElementsAttr>(adaptor.getOperands()[0]);
-    auto rhs = dyn_cast<DenseIntElementsAttr>(adaptor.getOperands()[1]);
+    auto lhs = dyn_cast_or_null<DenseIntElementsAttr>(adaptor.getOperands()[0]);
+    auto rhs = dyn_cast_or_null<DenseIntElementsAttr>(adaptor.getOperands()[1]);
 
     if (!lhs || !rhs) {
         return nullptr;
@@ -94,10 +94,11 @@ OpFoldResult ConstantOp::fold(ConstantOp::FoldAdaptor adaptor)
     return adaptor.getCoefficients();
 }
 
-LogicalResult EvalOp::verify() {
-  return getPoint().getType().isSignlessInteger(32)
-             ? success()
-             : emitOpError("argument point must be a 32-bit integer");
+LogicalResult EvalOp::verify()
+{
+    return getPoint().getType().isSignlessInteger(32)
+               ? success()
+               : emitOpError("argument point must be a 32-bit integer");
 }
 
 }  // namespace mlir::tutorial::poly

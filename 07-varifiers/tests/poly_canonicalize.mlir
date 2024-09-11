@@ -1,4 +1,4 @@
-// RUN: tutorial-opt --canonicalize %s > %t
+// RUN: 07-tutorial-opt --canonicalize %s > %t
 // RUN: FileCheck %s < %t
 
 // CHECK-LABEL: @test_simple

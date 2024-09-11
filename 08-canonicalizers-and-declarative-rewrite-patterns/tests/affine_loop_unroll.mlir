@@ -1,4 +1,4 @@
-// RUN: 07-tutorial-opt %s --affine-full-unroll > %t
+// RUN: 08-tutorial-opt %s --affine-full-unroll > %t
 // RUN: FileCheck %s < %t
 
 func.func @test_single_nested_loop(%buffer: memref<4xi32>) -> (i32) {

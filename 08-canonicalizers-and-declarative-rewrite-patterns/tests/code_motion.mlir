@@ -1,4 +1,4 @@
-// RUN: 07-tutorial-opt %s --loop-invariant-code-motion > %t
+// RUN: 08-tutorial-opt %s --loop-invariant-code-motion > %t
 // RUN: FileCheck %s < %t
 
 module {

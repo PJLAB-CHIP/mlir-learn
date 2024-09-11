@@ -1,4 +1,4 @@
-// RUN: 07-tutorial-opt -pass-pipeline="builtin.module(func.func(sccp))" %s > %t
+// RUN: 08-tutorial-opt -pass-pipeline="builtin.module(func.func(sccp))" %s > %t
 // RUN: FileCheck %s < %t
 
 // Note how sscp creates new constants for the computed values,
