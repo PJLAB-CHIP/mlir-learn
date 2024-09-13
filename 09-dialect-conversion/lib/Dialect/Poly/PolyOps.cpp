@@ -90,7 +90,7 @@ OpFoldResult FromTensorOp::fold(FromTensorOp::FoldAdaptor adaptor)
     // nullptr, which is cast by MLIR to a failed OpFoldResult.
 
     // Returns null if the cast failed, which corresponds to a failed fold.
-    return dyn_cast<DenseIntElementsAttr>(adaptor.getInput());
+    return dyn_cast_or_null<DenseIntElementsAttr>(adaptor.getInput());
 }
 
 OpFoldResult ConstantOp::fold(ConstantOp::FoldAdaptor adaptor)

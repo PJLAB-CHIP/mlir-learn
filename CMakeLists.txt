@@ -37,4 +37,5 @@ add_subdirectory("06-folders-and-constant-propagation")
 add_subdirectory("07-varifiers")
 add_subdirectory("08-canonicalizers-and-declarative-rewrite-patterns")
 add_subdirectory("09-dialect-conversion")
+add_subdirectory("10-lowering-poly-to-llvm")
 
