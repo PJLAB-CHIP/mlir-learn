@@ -28,7 +28,7 @@ include_directories(${MLIR_INCLUDE_DIRS})
 link_directories(${LLVM_BUILD_LIBRARY_DIR})
 add_definitions(${LLVM_DEFINITIONS})
 
-add_subdirectory("standalone")
+add_subdirectory("00-standalone")
 add_subdirectory("02-writing-our-first-pass")
 add_subdirectory("03-using-table-gen-for-passes")
 add_subdirectory("04-defining-a-new-dialect")
