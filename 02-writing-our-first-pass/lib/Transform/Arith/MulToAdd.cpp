@@ -128,7 +128,8 @@ void MulToAddPass::runOnOperation()
     mlir::RewritePatternSet patterns(&getContext());
     patterns.add<PowerOfTwoExpand>(&getContext());
     patterns.add<PeelFromMul>(&getContext());
-    (void) applyPatternsAndFoldGreedily(getOperation(), std::move(patterns));
+    (void) applyPatternsGreedily(getOperation(), std::move(patterns),
+                                 GreedyRewriteConfig().enableFolding());
 }
 
 }  // namespace mlir::tutorial

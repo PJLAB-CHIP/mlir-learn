@@ -8,7 +8,7 @@ include "mlir/Interfaces/SideEffectInterfaces.td"
 include "mlir-tutorial/Dialect/Poly/PolyDialect.td"
 include "mlir-tutorial/Dialect/Poly/PolyTypes.td"
 
-def PolyOrContainer : TypeOrContainer<Polynomial, "poly-or-container">;
+def PolyOrContainer : TypeOrValueSemanticsContainer<Polynomial, "poly-or-container">;
 
 class Poly_BinOp<string mnemonic> : 
     Op<Poly_Dialect, mnemonic, [

@@ -17,7 +17,6 @@
         "--header-insertion=iwyu",
         "--header-insertion-decorators",
         "--background-index",
-        // "-j=6",
         "--pch-storage=memory",
         "--function-arg-placeholders=false",
         "--query-driver=clang*"

@@ -9,7 +9,7 @@ include "mlir/Interfaces/InferTypeOpInterface.td"
 include "mlir-tutorial/Dialect/Poly/PolyDialect.td"
 include "mlir-tutorial/Dialect/Poly/PolyTypes.td"
 
-def PolyOrContainer : TypeOrContainer<Polynomial, "poly-or-container">;
+def PolyOrContainer : TypeOrValueSemanticsContainer<Polynomial, "poly-or-container">;
 
 // Inject verification that all integer-like arguments are 32-bits
 def Has32BitArguments : NativeOpTrait<"Has32BitArguments"> {

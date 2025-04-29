@@ -44,8 +44,8 @@ struct AffineFullUnrollPatternRewrite
         patterns.add<AffineFullUnrollPattern>(&getContext());
         // One could use GreedyRewriteConfig here to slightly tweak the behavior
         // of the pattern application.
-        (void) applyPatternsAndFoldGreedily(getOperation(),
-                                            std::move(patterns));
+        (void) applyPatternsGreedily(getOperation(), std::move(patterns),
+                                     GreedyRewriteConfig().enableFolding());
     }
 };
 
