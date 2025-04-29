@@ -31,8 +31,6 @@ Diagnostics:
       readability-identifier-naming.FunctionCase: lowerCamelCase
       readability-identifier-naming.ClassMethodCase: lowerCamelCase
       readability-identifier-naming.MethodCase: lowerCamelCase
-      # readability-identifier-naming.ConstantPrefix: k
-      # readability-identifier-naming.ConstantCase: CamelCase
 
     Remove: [
       modernize-use-trailing-return-type,

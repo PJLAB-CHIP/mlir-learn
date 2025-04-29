@@ -8,7 +8,7 @@
 ####################################################################################################
 
 set(TARGET_NAME ${PROJECT_TARGET_PREFIX}-tutorial-lib)
-mlir_learn_log_info("|- Target <lib>: ${TARGET_NAME}")
+log_info("|- Target <lib>: ${TARGET_NAME}")
 
 # Get the tablegen targets from the global property;
 # Check "../include/CMakeLists.txt" for its definition.
@@ -46,13 +46,13 @@ target_include_directories(
     ${TARGET_NAME}
     PUBLIC
     ${PROJECT_SOURCE_DIR}/include
-    ${CMAKE_OUTPUT_DIR}/include
+    ${CMAKE_BINARY_DIR}/${PROJECT_NAME}/include
 )
 
 set_target_properties(${TARGET_NAME} PROPERTIES 
     # Output Directory:
-    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_OUTPUT_DIR}/bin
-    LIBRARY_OUTPUT_DIRECTORY ${CMAKE_OUTPUT_DIR}/lib
-    ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_OUTPUT_DIR}/lib
+    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${PROJECT_NAME}/bin
+    LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${PROJECT_NAME}/lib
+    ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${PROJECT_NAME}/lib
 )
 

@@ -5,8 +5,8 @@
 #          target.
 ####################################################################################################
 
-set(TARGET_NAME "02-tutorial-lib")
-mlir_learn_log_info("|- Target <lib>: ${TARGET_NAME}")
+set(TARGET_NAME "${PROJECT_TARGET_PREFIX}-tutorial-lib")
+log_info("|- Target <lib>: ${TARGET_NAME}")
 
 # If you want to append your library to ${MLIR_DIALECT_LIBS},
 # Use:
@@ -39,7 +39,7 @@ target_include_directories(
 
 set_target_properties(${TARGET_NAME} PROPERTIES 
     # Output Directory:
-    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_OUTPUT_DIR}/bin
-    LIBRARY_OUTPUT_DIRECTORY ${CMAKE_OUTPUT_DIR}/lib
-    ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_OUTPUT_DIR}/lib
+    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${PROJECT_NAME}/bin
+    LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${PROJECT_NAME}/lib
+    ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${PROJECT_NAME}/lib
 )

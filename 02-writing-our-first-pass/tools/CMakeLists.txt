@@ -4,8 +4,8 @@
 # @brief   This CMake file is used to define the ${PROJECT_TARGET_PREFIX}-tutorial-opt executable.
 ####################################################################################################
 
-set(TARGET_NAME "02-tutorial-opt")
-mlir_learn_log_info("|- Target <exe>: ${TARGET_NAME}")
+set(TARGET_NAME "${PROJECT_TARGET_PREFIX}-tutorial-opt")
+log_info("|- Target <exe>: ${TARGET_NAME}")
 
 get_property(dialect_libs GLOBAL PROPERTY MLIR_DIALECT_LIBS)
 get_property(conversion_libs GLOBAL PROPERTY MLIR_CONVERSION_LIBS)
@@ -22,7 +22,7 @@ add_llvm_executable(${TARGET_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/tutorial-opt.cpp)
 
 set_target_properties(${TARGET_NAME} PROPERTIES 
     # Output Directory:
-    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_OUTPUT_DIR}/tools
+    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${PROJECT_NAME}/tools
 )
 
 target_link_libraries(${TARGET_NAME} PRIVATE ${LIBS})
